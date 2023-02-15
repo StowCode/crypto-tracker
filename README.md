@@ -1,3 +1,9 @@
+<h1>Crypto Tracker</h1>
+
+<h5>This app (built in React and powered by CoinGecko) tracks the live price action of cryptocurrencies.</h5>
+
+------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
