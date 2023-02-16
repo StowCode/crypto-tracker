@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Gilfoyles Bitcoin Alarm</h1>
-        <p id='demo_version'>Demo Version</p>
+        <p id='demo_version'>Working Demo</p>
         <CoinCard />
       </header>
     </div>

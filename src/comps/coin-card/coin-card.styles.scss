@@ -1,10 +1,14 @@
+h1 {
+    margin-top: 25px;
+}
+
 .coin_container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     border: 1px solid white;
     padding: 50px;
-    border-radius: 5%;
+    border-radius: 10px;
     width: 50vw;
 
     .coin_name_container {

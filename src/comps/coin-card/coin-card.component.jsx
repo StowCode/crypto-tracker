@@ -3,15 +3,33 @@ import { useState } from 'react';
 import lowAlert from '../../assets/low_alert.wav';
 import highAlert from '../../assets/high_alert.wav';
 
-import data from '../../bitcoin.json';
+/* import data from '../../bitcoin.json'; */
 import btc_image from '../../assets/btc.png'
 import '../coin-card/coin-card.styles.scss';
 
 const CoinCard = () => {
 
-    const [lowAlertValue, setLowAlertValue] = useState(data.market_data.low_24h.usd);
-    const [highAlertValue, setHighAlertValue] = useState(data.market_data.high_24h.usd);
-    const [currentPrice, setCurrentPrice] = useState(data.market_data.current_price.usd);
+    const [price, setPrice] = useState([])
+    const [currentPrice, setCurrentPrice] = useState(0);
+    const [highPrice, setHighPrice] = useState(0);
+    const [lowPrice, setLowPrice] = useState(0);
+    const [lowAlertValue, setLowAlertValue] = useState(0);
+    const [highAlertValue, setHighAlertValue] = useState(0);
+
+    const fetchData = () => {
+        fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+          .then(response => {
+            return response.json()
+          })
+          .then(data => {
+            setPrice(data)
+            setCurrentPrice(data.market_data.current_price.usd)
+            setHighAlertValue(data.market_data.high_24h.usd)
+            setHighPrice(data.market_data.high_24h.usd)
+            setLowAlertValue(data.market_data.low_24h.usd)
+            setLowPrice(data.market_data.low_24h.usd)
+          })
+        }
 
     // DEMO FUNCTIONS ONLY FOR MVP
     function priceDropper() {
@@ -21,7 +39,6 @@ const CoinCard = () => {
     function raisePrice() {
         setCurrentPrice(currentPrice + 1000);
     }
-
 
     const lowAlertSound = new Audio(lowAlert);
     const highAlertSound = new Audio(highAlert);
@@ -37,35 +54,21 @@ const CoinCard = () => {
     }
     priceCheckFunction();
 
-
-/*     const [price, setPrice] = useState([]) */
-
-/*     const fetchData = () => {
-        fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
-          .then(response => {
-            return response.json()
-          })
-          .then(data => {
-            setPrice(data)
-          })
-      } 
-
-      fetchData(); */
-
         return(
             <div>
                 <button onClick={priceDropper}>Price Dropper Test</button>
+                <button onClick={fetchData}>Refresh Data</button>
                 <button onClick={raisePrice}>Raise Price Test</button>
                 <div className='coin_container'>
                     <div className='coin_name_container'>
                         <img src={btc_image} alt='bitcoin logo' />
-                        <h1>{data.name}</h1>
+                        <h1>Bitcoin</h1>
                     </div>
                     
                     <div className='price_container'>
                         <div className='price_box' id='high_num'>
                             <p>24 Hour High:</p>
-                            <p>${data.market_data.high_24h.usd.toFixed(2)}</p>
+                            <p>${highPrice.toFixed(2)}</p>
                         </div>
 
                         <div className='price_box'>
@@ -75,7 +78,7 @@ const CoinCard = () => {
 
                         <div className='price_box' id='low_num'>
                             <p className='24_low'>24 Hour Low:</p>
-                            <p>${data.market_data.low_24h.usd.toFixed(2)}</p>
+                            <p>${lowPrice.toFixed(2)}</p>
                         </div>
                            
                     </div>
