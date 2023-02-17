@@ -23,34 +23,11 @@ const CoinCard = () => {
         }
     )
 
-    // DEMO FUNCTIONS ONLY FOR MVP
-    // Doesn't work with useEffect active
-/*     function priceDropper() {
-        setCurrentPrice(currentPrice - 1000);
-    }
-
-    function raisePrice() {
-        setCurrentPrice(currentPrice + 1000);
-    } */
-
-
-
         return(
             <div>
-{/*                 <button onClick={priceDropper}>Price Dropper Test</button>
-                <button onClick={fetchData}>Refresh Data</button>
-                <button onClick={raisePrice}>Raise Price Test</button> */}
                 <div className='coin_container'>
                     <div className='coin_name_container'>
                         <BitLogo />
-{/*                         <img 
-                            data-tilt
-                            data-tilt-max='50'
-                            data-tilt-speed='400'
-                            data-tilt-perspective='500'
-                            src={btc_image} 
-                            alt='bitcoin logo' 
-                        /> */}
                         <h1>Bitcoin</h1>
                     </div>
                     
@@ -68,12 +45,9 @@ const CoinCard = () => {
                         <div className='price_box' id='low_num'>
                             <p className='24_low'>24 Hour Low:</p>
                             <p>${lowPrice.toFixed(2)}</p>
-                        </div>
-                           
+                        </div>   
                     </div>
-
                 </div>
-
             </div>
         )
     }

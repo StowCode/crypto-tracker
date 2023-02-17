@@ -1,0 +1,19 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 75px;
+    background-color: black;
+
+    p {
+        font-size: 20px;
+        margin-right: 25px;
+    }
+
+    img {
+        width: 150px;
+    }
+}
