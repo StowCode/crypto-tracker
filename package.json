@@ -11,6 +11,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.58.1",
     "scss": "^0.2.4",
+    "vanilla-tilt": "^1.8.0",
     "vercel": "^28.16.1",
     "web-vitals": "^2.1.4"
   },

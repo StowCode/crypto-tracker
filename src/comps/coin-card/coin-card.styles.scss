@@ -3,6 +3,7 @@ h1 {
 }
 
 .coin_container {
+    margin-top: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -57,51 +58,6 @@ h1 {
 }
 
 
-.alerts_box {
-    h4 {
-        margin: 25px 0px 0px 0px;
-    }
-
-    p {
-        font-size: 16px;
-        margin-bottom: 50px;
-        color: lightgrey;
-    }
-
-    .alerts_flex {
-        display: flex;
-        justify-content: space-evenly;
-        height: 100%;
-
-        h6 {
-            margin: 0;
-            margin-bottom: 25px;
-        }
-    }
-
-    .input_container {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        .input_flex {
-            display: flex;
-            align-items: center;
-
-            label {
-                font-size: 20px;
-                margin-right: 10px;
-            }
-
-            input {
-                margin-right: 10px;
-                height: 26px;
-                width: 120px;
-            }
-
-        }
-    }
-}
 
 button {
     margin: 25px;
