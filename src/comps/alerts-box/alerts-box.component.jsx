@@ -10,6 +10,8 @@ const AlertsBox = (props) => {
     const [lowAlertValue, setLowAlertValue] = useState(props.lowAlertValue);
     const [highAlertValue, setHighAlertValue] = useState(props.highAlertValue);
 
+    const [newLowAlert, setNewLowAlert] = useState();
+
     const lowAlertSound = new Audio(lowAlert);
     const highAlertSound = new Audio(highAlert);
 
@@ -24,13 +26,18 @@ const AlertsBox = (props) => {
     }
     priceCheckFunction();
 
+/*     const test = () => {
+        setLowAlertValue(newLowAlert)
+    } */
+
     return(
         <div className='alerts_box'>
             <h4>Alerts</h4>
-            <p>Current price is retrieved every 30 seconds.</p>
+            <p>Current price is updated every 60 seconds.</p>
             
             <div className='alerts_flex'>
-                <h6>Low Alert: ${lowAlertValue}</h6>
+                
+                <h6>Low Alert: ${lowAlertValue}</h6> {/* Ternary Operator Here? */}
                 <h6>High Alert: ${highAlertValue}</h6>
             </div>
 
@@ -43,6 +50,10 @@ const AlertsBox = (props) => {
                         onChange={(event) => {setLowAlertValue(event.target.value)}}
                         placeholder='Low Price Target'
                     ></input>
+{/*                     <button
+                        type='submit'
+                        onClick={test}
+                    >Submit</button> */}
                 </form>
                 
                 <form className='input_flex' id='high_alert'>

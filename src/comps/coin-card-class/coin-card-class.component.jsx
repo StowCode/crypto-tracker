@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
-import btc_image from '../../assets/btc.png'
-import '../coin-card/coin-card.styles.scss';
+import '../coin-card-class/coin-card-class.styles.scss';
 import BitLogo from '../bitcoin-logo/bitcoin-logo.component';
 
 class CoinCardClass extends Component {
