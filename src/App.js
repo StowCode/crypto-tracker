@@ -15,15 +15,26 @@ class App extends Component {
     }
   }
 
-  // Should I use a callback here?  setTimeout?
   componentDidMount() {
     fetch('https://api.coingecko.com/api/v3/coins/bitcoin')
-      .then(response => response.json())
-      .then((data) => this.setState(() => {
-        return {bitcoinData: data}
-      }))
+    .then(response => response.json())
+    .then((data) => this.setState(() => {
+      return {bitcoinData: data}
+    }))
+    .then(setInterval(() => {
+      this.fetchData()
+    }, 30000))
   }
+
   
+  fetchData() {
+    fetch('https://api.coingecko.com/api/v3/coins/bitcoin')
+    .then(response => response.json())
+    .then((data) => this.setState(() => {
+      return {bitcoinData: data}
+    }))
+  }
+
   render() {
     const { bitcoinData } = this.state; //Destructured for brevity
 

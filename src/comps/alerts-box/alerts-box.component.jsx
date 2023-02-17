@@ -27,6 +27,7 @@ const AlertsBox = (props) => {
     return(
         <div className='alerts_box'>
             <h4>Alerts</h4>
+            <p>Current price is retrieved every 30 seconds.</p>
             
             <div className='alerts_flex'>
                 <h6>Low Alert: ${lowAlertValue}</h6>
