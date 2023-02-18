@@ -11,7 +11,8 @@ class App extends Component {
     super();
 
     this.state = {
-      bitcoinData: []
+      bitcoinData: [],
+      alertData: []
     }
   }
 
@@ -36,7 +37,12 @@ class App extends Component {
   }
 
   render() {
-    const { bitcoinData } = this.state; //Destructured for brevity
+    
+    const updateAlerts = (value) => {
+      this.setState({alertData: value})
+    }
+
+    const { bitcoinData, alertData } = this.state; //Destructured for brevity
 
     return (
       <div className="App">
@@ -49,7 +55,11 @@ class App extends Component {
           </p>
 
           <CoinCardClass data={bitcoinData}/>
-          <AlertsBox 
+          <AlertsBox
+            alertDisplay={alertData.name}
+            lowAlert={alertData.low}
+            highAlert={alertData.high}
+            alertData={updateAlerts} 
             lowAlertValue={0}
             highAlertValue={100000}
             currentPrice={bitcoinData.market_data?.current_price.usd}

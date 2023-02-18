@@ -10,7 +10,7 @@ class CoinCardClass extends Component {
 
         return(
             <div>
-                <div className='coin_container'>
+                <div className='coin_container' id='coin_container'>
                     <div className='coin_name_container'>
                         <BitLogo />
                         <h1>{data.name}</h1>
