@@ -1,27 +1,8 @@
 import { useState } from 'react';
 
-import lowAlert from '../../assets/low_alert.wav';
-import highAlert from '../../assets/high_alert.wav';
-
 import '../alerts-box/alerts-box.styles.scss';
 
 const AlertsBox = (props) => {
-
-    const lowAlertSound = new Audio(lowAlert);
-    const highAlertSound = new Audio(highAlert);
-
-    // This needs to be updated to use props from App
-    const priceCheckFunction = () => {
-        if (props.currentPrice < props.lowAlert) {
-            lowAlertSound.play()
-        } else if (props.currentPrice > props.highAlert) {
-            highAlertSound.play()
-        } else {
-            return;
-        }
-    }
-    priceCheckFunction();
-
 
     // THIS BLOCK OF CODE IS WORKING FOR DEMO FORM
     const [alertValues, setAlertValues] = useState({
@@ -36,6 +17,7 @@ const AlertsBox = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault(); // prevents the submit button from refreshing the page
         props.alertData(alertValues)
+        props.checkPrice()
         // console.log(alertValues)
         setAlertValues({low:'', high: ''}) // clears input field
     }

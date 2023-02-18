@@ -6,6 +6,9 @@ import CoinCard from './comps/coin-card/coin-card.component';
 import AlertsBox from './comps/alerts-box/alerts-box.component';
 import Footer from './comps/Footer/footer.component';
 
+import lowAlertFile from './assets/low_alert.wav';
+import highAlertFile from './assets/high_alert.wav';
+
 class App extends Component {
   constructor() {
     super();
@@ -14,6 +17,7 @@ class App extends Component {
       bitcoinData: [],
       alertData: []
     }
+
   }
 
   componentDidMount() {
@@ -36,14 +40,29 @@ class App extends Component {
     }))
   }
 
+
   render() {
+    const { bitcoinData, alertData } = this.state; //Destructured for brevity
+
+    const priceCheckFunction = () => {
+      const lowAlertSound = new Audio(lowAlertFile);
+      const highAlertSound = new Audio(highAlertFile);
+  
+      if (bitcoinData.market_data?.current_price.usd < alertData.low) {
+          lowAlertSound.play()
+      } else if (bitcoinData.market_data?.current_price.usd > alertData.high) {
+          highAlertSound.play()
+      } else {
+          return;
+      }
+    }
+    priceCheckFunction()
     
     const updateAlerts = (value) => {
       this.setState({alertData: value})
     }
 
-    const { bitcoinData, alertData } = this.state; //Destructured for brevity
-
+    
     return (
       <div className="App">
         <header className="App-header">
@@ -56,6 +75,7 @@ class App extends Component {
 
           <CoinCardClass data={bitcoinData}/>
           <AlertsBox
+            checkPrice={priceCheckFunction}
             alertDisplay={alertData.name}
             lowAlert={alertData.low}
             highAlert={alertData.high}
