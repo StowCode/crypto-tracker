@@ -19,8 +19,9 @@ function BitLogo() {
   const options = {
     scale: 1,
     speed: 1000,
+/*     perspective: 1, */
+/*     max: 15, */
     transition: true,
-    max: 30,
     "full-page-listening": true,
   };
 

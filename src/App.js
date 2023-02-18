@@ -67,9 +67,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Gilfoyles Bitcoin Alarm</h1>
-          <p id='demo_version'>Using CoinGecko's API, this app gets the current price, 24 hour high, and 24 hour low of Bitcoin.<br></br>You can set custom price alarms in the Alerts box.
-          <br></br>
-          <br></br>
+          <p id='demo_version'>
           Inspired by Gilfoyles Bitcoin Alarm in 'Silicon Valley'.
           </p>
 

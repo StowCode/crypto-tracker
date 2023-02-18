@@ -3,13 +3,14 @@ h1 {
 }
 
 .coin_container {
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.3),
+                10px 10px 15px rgba(70,70,70,0.12);
     margin-top: 25px;
     padding: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid white;
     border-radius: 10px;
     width: 700px;
 
@@ -21,12 +22,16 @@ h1 {
 
         h1 {
             font-size: 40px;
+            font-style:italic;
             margin: 0;
         }
     }
 
     .price_container {
-        background-color: rgba(255,255,255,.2);
+        background-color: rgb(184, 192, 196);
+        /* background-color: rgba(255,255,255,.2); */
+        box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.3), 
+                    inset 15px 15px 15px rgba(70, 70, 70, 0.15);
         border-radius: 10px;
         width: 50%;
         height: 200px;
@@ -41,6 +46,7 @@ h1 {
 
             p {
                 font-size: 18px;
+                font-weight:600;
             }
         }
 
@@ -64,28 +70,26 @@ h1 {
     .coin_container {
         margin-top: 25px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        border: 1px solid white;
         border-radius: 10px;
         width: 90vw;
     
         .coin_name_container {
-            display: none;
             margin-right: 0px;
             display: flex;
+            flex-direction: row;
             justify-content:center;
+            align-items: center;
     
             h1 {
-                display: none;
                 font-size: 40px;
-                margin: 0;
+                margin-left: 10px;
             }
         }
     
         .price_container {
-            background-color: rgba(255,255,255,.2);
             border-radius: 10px;
             padding: 0px 20px;
             width: 100%;
@@ -114,23 +118,4 @@ h1 {
     }
 }
 
-
-
-button {
-    margin: 25px 5px;
-    padding: 5px 10px;
-    background: none;
-    color: white;
-    border: 1px solid white;
-    font-size: 16px;
-    cursor: pointer;
-
-    &:hover {
-        background: rgba(255,255,255,.15);
-    }
-
-    &:active {
-        background: white;
-    }
-}
 
