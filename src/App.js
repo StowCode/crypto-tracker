@@ -66,9 +66,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Gilfoyles Bitcoin Alarm</h1>
+          <h1 id='page_title'>Gilfoyles Bitcoin Alarm</h1>
           <p id='demo_version'>
-          Inspired by Gilfoyles Bitcoin Alarm in 'Silicon Valley'.
+          Inspired by the show 'Silicon Valley'.
           </p>
 
           <CoinCardClass data={bitcoinData}/>

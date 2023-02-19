@@ -12,8 +12,30 @@
   color: black;
 }
 
-h1 {
+#page_title {
   font-size: 40px;
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding: 0;
 }
 
+#demo_version {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+  #page_title {
+    font-size: 28px;
+    margin-top: 20px;
+    padding: 0;
+  }
+  
+  #demo_version {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+}
 

@@ -4,8 +4,10 @@ import coinGecko from '../../assets/CoinGecko-WhiteText.svg'
 const Footer  = () => {
     return(
         <footer>
-            <p>Powered By</p>
-            <img src={coinGecko}></img>
+            <div id='footer'>
+                <p>Powered By</p>
+                <img src={coinGecko}></img>
+            </div>
         </footer>
     )
 }

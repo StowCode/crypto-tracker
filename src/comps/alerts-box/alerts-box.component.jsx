@@ -29,7 +29,6 @@ const AlertsBox = (props) => {
             <p>Current price is updated every 30 seconds.</p>
             
             <div className='alerts_flex'>
-                
                 <h6>Low Alert: ${props.lowAlert}</h6> 
                 <h6>High Alert: ${props.highAlert}</h6>
             </div>
@@ -37,6 +36,7 @@ const AlertsBox = (props) => {
             <div className='input_container'>
 
                 <form onSubmit={handleSubmit} className='input_flex' id='alerts_form'>
+                    <label className='form_alerts'>Low Alert: ${props.lowAlert}</label>
                     <input
                         name='low'
                         type='number'
@@ -45,7 +45,8 @@ const AlertsBox = (props) => {
                         placeholder='Low Price Target'
                         value={alertValues.low}
                     ></input>
-
+                     
+                    <label className='form_alerts'>High Alert: ${props.highAlert}</label>
                     <input
                         name='high'
                         type='number'
@@ -54,6 +55,7 @@ const AlertsBox = (props) => {
                         placeholder='High Price Target'
                         value={alertValues.high}
                     ></input>
+                    
                     <button>Set Alerts</button>
                 </form>
             </div> 
